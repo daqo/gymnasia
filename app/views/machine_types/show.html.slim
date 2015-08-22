@@ -1,0 +1,15 @@
+p#notice = notice
+
+p
+  strong Name:
+  = @machine_type.name
+p
+  strong Description:
+  = @machine_type.description
+p
+  strong Quantity:
+  = @machine_type.quantity
+
+= link_to 'Edit', edit_machine_type_path(@machine_type)
+'|
+= link_to 'Back', machine_types_path

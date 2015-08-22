@@ -1,0 +1,25 @@
+h1 Machine Types
+
+table
+  thead
+    tr
+      th Name
+      th Description
+      th Quantity
+      th
+      th
+      th
+
+  tbody
+    - @machine_types.each do |machine_type|
+      tr
+        td 
+          = link_to machine_type.name, machine_type
+        td = machine_type.description
+        td = machine_type.quantity
+        td = link_to 'Edit', edit_machine_type_path(machine_type)
+        td = link_to 'Delete', machine_type, data: {:confirm => 'Are you sure?'}, :method => :delete
+
+br
+
+= link_to 'New Machine type', new_machine_type_path

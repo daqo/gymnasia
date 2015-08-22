@@ -33,6 +33,9 @@ gem 'unicorn'
 # Use Zurb Foundation
 gem 'foundation-rails'
 
+# Use slim as template engine
+gem "slim-rails"
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
@@ -45,5 +48,6 @@ group :development, :test do
 
   # Use rspec for testinh
   gem 'rspec-rails'
+  gem 'fuubar'
 end
 
