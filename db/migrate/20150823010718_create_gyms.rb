@@ -1,6 +1,6 @@
 class CreateGyms < ActiveRecord::Migration
   def change
-    create_table :gyms do |t|
+    create_table :gyms, id: :uuid do |t|
       t.string :name
       t.string :address
       t.string :phone
