@@ -6,12 +6,12 @@ RSpec.describe "machine_types/index", type: :view do
       MachineType.create!(
         :name => "Name",
         :description => "MyText",
-        :quantity => 1
+        :muscle_group => "calves"
       ),
       MachineType.create!(
         :name => "Name",
         :description => "MyText",
-        :quantity => 1
+        :muscle_group => "calves"
       )
     ])
   end
@@ -20,6 +20,6 @@ RSpec.describe "machine_types/index", type: :view do
     render
     assert_select "div.row .small-2", :text => "Name".to_s, :count => 2
     assert_select "div.row .small-6", :text => "MyText".to_s, :count => 2
-    assert_select "div.row .small-1", :text => 1.to_s, :count => 2
+    assert_select "div.row .small-1", :text => "calves".to_s, :count => 2
   end
 end

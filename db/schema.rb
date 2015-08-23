@@ -28,9 +28,9 @@ ActiveRecord::Schema.define(version: 20150823010718) do
   create_table "machine_types", id: :uuid, default: "uuid_generate_v4()", force: :cascade do |t|
     t.string   "name"
     t.text     "description"
-    t.integer  "quantity"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.string   "muscle_group"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
   end
 
 end

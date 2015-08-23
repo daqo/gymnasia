@@ -3,8 +3,8 @@ class CreateMachineTypes < ActiveRecord::Migration
     create_table :machine_types, id: :uuid do |t|
       t.string :name
       t.text :description
-      t.integer :quantity
-
+      t.string :muscle_group
+      
       t.timestamps null: false
     end
   end

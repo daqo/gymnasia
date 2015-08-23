@@ -24,11 +24,11 @@ RSpec.describe MachineTypesController, type: :controller do
   # MachineType. As you add validations to MachineType, be sure to
   # adjust the attributes here as well.
   let(:valid_attributes) {
-    {name: "valid_name", description: "Yet another awesome machine", quantity: 1 }
+    {name: "valid_name", description: "Yet another awesome machine", muscle_group: "calves" }
   }
 
   let(:invalid_attributes) {
-    {name: "", description: "Yet another awesome machine", quantity: -1 }
+    {name: "", description: "Yet another awesome machine", muscle_group: "calves" }
   }
 
   # This should return the minimal set of values that should be in the session
@@ -103,14 +103,14 @@ RSpec.describe MachineTypesController, type: :controller do
   describe "PUT #update" do
     context "with valid params" do
       let(:new_attributes) {
-        {name: "valid_name", description: "Yet another awesome machine", quantity: 10 }
+        {name: "valid_name", description: "Yet another awesome machine", muscle_group: "knees" }
       }
 
       it "updates the requested machine_type" do
         machine_type = MachineType.create! valid_attributes
         put :update, {:id => machine_type.to_param, :machine_type => new_attributes}, valid_session
         machine_type.reload
-        expect(machine_type.quantity).to eq(10)
+        expect(machine_type.muscle_group).to eq("knees")
       end
 
       it "assigns the requested machine_type as @machine_type" do

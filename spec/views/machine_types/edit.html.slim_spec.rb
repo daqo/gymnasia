@@ -5,7 +5,7 @@ RSpec.describe "machine_types/edit", type: :view do
     @machine_type = assign(:machine_type, MachineType.create!(
       :name => "MyString",
       :description => "MyText",
-      :quantity => 1
+      :muscle_group => "calves"
     ))
   end
 
@@ -18,7 +18,7 @@ RSpec.describe "machine_types/edit", type: :view do
 
       assert_select "textarea#machine_type_description[name=?]", "machine_type[description]"
 
-      assert_select "input#machine_type_quantity[name=?]", "machine_type[quantity]"
+      assert_select "input#machine_type_muscle_group[name=?]", "machine_type[muscle_group]"
     end
   end
 end

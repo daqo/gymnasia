@@ -5,7 +5,7 @@ RSpec.describe "machine_types/show", type: :view do
     @machine_type = assign(:machine_type, MachineType.create!(
       :name => "Name",
       :description => "MyText",
-      :quantity => 1
+      :muscle_group => "something"
     ))
   end
 
@@ -13,6 +13,6 @@ RSpec.describe "machine_types/show", type: :view do
     render
     expect(rendered).to match(/Name/)
     expect(rendered).to match(/MyText/)
-    expect(rendered).to match(/1/)
+    expect(rendered).to match(/something/)
   end
 end
