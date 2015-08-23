@@ -1,0 +1,15 @@
+= form_for @gym do |f|
+  - if @gym.errors.any?
+    div.alert-box.alert
+      h4 = "#{pluralize(@gym.errors.count, "error")} prohibited this gym from being saved:"
+      ul
+        - @gym.errors.full_messages.each do |message|
+          li = message
+
+  .field
+    = f.text_field :name, placeholder: "Name"
+  .field
+    = f.text_field :address, placeholder: "Address"
+  .field
+    = f.text_field :phone, placeholder: "Phone"
+  .actions = f.submit class: 'button'

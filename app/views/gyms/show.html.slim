@@ -1,0 +1,16 @@
+- if notice
+	div.alert-box.success = notice
+
+p
+  strong Name:
+  = @gym.name
+p
+  strong Address:
+  = @gym.address
+p
+  strong Phone:
+  = @gym.phone
+
+= link_to 'Edit', edit_gym_path(@gym)
+'|
+= link_to 'Back', gyms_path

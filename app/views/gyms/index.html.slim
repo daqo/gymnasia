@@ -1,0 +1,18 @@
+h3 Gyms
+
+- @gyms.each do |gym|
+  .row
+    .small-2.columns
+      = link_to gym.name, gym
+    .small-4.columns
+      = gym.address
+    .small-3.columns
+      = gym.phone
+    .small-3.columns
+      ul.button-group
+        li = link_to 'Edit', edit_gym_path(gym), class: "button tiny"
+        li = link_to 'Delete', gym, data: {:confirm => 'Are you sure?'}, :method => :delete, class: "button tiny alert"
+
+br
+
+= link_to 'New Gym', new_gym_path, class: "button"
