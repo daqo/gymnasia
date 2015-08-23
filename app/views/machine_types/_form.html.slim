@@ -1,7 +1,7 @@
 = form_for @machine_type do |f|
   - if @machine_type.errors.any?
-    #error_explanation
-      h2 = "#{pluralize(@machine_type.errors.count, "error")} prohibited this machine_type from being saved:"
+    div.alert-box.alert
+      h4 = "#{pluralize(@machine_type.errors.count, "error")} prohibited this machine_type from being saved:"
       ul
         - @machine_type.errors.full_messages.each do |message|
           li = message

@@ -1,24 +1,18 @@
 h1 Machine Types
 
-table
-  thead
-    tr
-      th Name
-      th Description
-      th Quantity
-      th
-      th
-
-  tbody
-    - @machine_types.each do |machine_type|
-      tr
-        td 
-          = link_to machine_type.name, machine_type
-        td = machine_type.description
-        td = machine_type.quantity
-        td = link_to 'Edit', edit_machine_type_path(machine_type)
-        td = link_to 'Delete', machine_type, data: {:confirm => 'Are you sure?'}, :method => :delete
+- @machine_types.each do |machine_type|
+  .row
+    .small-2.columns
+      = link_to machine_type.name, machine_type
+    .small-6.columns
+      = machine_type.description
+    .small-1.columns
+      = machine_type.quantity
+    .small-3.columns
+      ul.button-group
+        li = link_to 'Edit', edit_machine_type_path(machine_type), class: "button tiny"
+        li = link_to 'Delete', machine_type, data: {:confirm => 'Are you sure?'}, :method => :delete, class: "button tiny alert"
 
 br
 
-= link_to 'New Machine type', new_machine_type_path
+= link_to 'New Machine type', new_machine_type_path, class: "button"
